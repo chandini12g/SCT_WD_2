@@ -1,0 +1,137 @@
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0ef;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .calc {
+    background: #fff;
+    border: 1px solid #e0e0de;
+    border-radius: 16px;
+    padding: 1.25rem;
+    width: 300px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  /* ── Display ── */
+  .display {
+    background: #f5f5f4;
+    border: 1px solid #e4e4e2;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    min-height: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .display-expr {
+    font-size: 13px;
+    color: #888;
+    font-family: "SF Mono", "Fira Code", monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+    min-height: 18px;
+  }
+
+  .display-val {
+    font-size: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+    font-family: "SF Mono", "Fira Code", monospace;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+  }
+
+  .display-val.error {
+    font-size: 16px;
+    color: #c0392b;
+  }
+
+  /* ── Button grid ── */
+  .btn-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .btn {
+    height: 56px;
+    border: 1px solid #e4e4e2;
+    border-radius: 10px;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.1s, transform 0.08s, border-color 0.1s;
+    font-family: inherit;
+  }
+
+  .btn:hover { background: #f5f5f4; }
+  .btn:active { transform: scale(0.94); }
+
+  .btn:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  /* Operator buttons */
+  .btn.op {
+    background: #f0f4ff;
+    color: #2563eb;
+    border-color: #dbeafe;
+    font-weight: 500;
+  }
+  .btn.op:hover { background: #e0eaff; border-color: #bfdbfe; }
+
+  /* Equals button */
+  .btn.eq {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .btn.eq:hover { background: #1d4ed8; border-color: #1d4ed8; }
+
+  /* Clear button */
+  .btn.clear {
+    color: #c0392b;
+    border-color: #fecaca;
+  }
+  .btn.clear:hover { background: #fef2f2; border-color: #fca5a5; }
+
+  /* Zero spans 2 columns */
+  .btn.zero { grid-column: span 2; }
+
+  /* ── Keyboard hint ── */
+  .hint {
+    margin-top: 1rem;
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  .hint kbd {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 11px;
+    background: #f5f5f4;
+    border: 1px solid #e4e4e2;
+    border-radius: 4px;
+    padding: 1px 5px;
+    color: #666;
+  }
